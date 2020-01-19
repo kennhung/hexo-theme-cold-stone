@@ -2,6 +2,19 @@
 layout: layout
 ---
 
-<section class="card about slide-in-right">
-  <%- partial('_partial/bio', null, {cache: true}) %>
+<section class="slide-in-right" style="display:flex;flex-direction:row;justify-content:center;">
+  <section class="card about" style="margin-right: 15px;">
+    <%- partial('_partial/bio', null, {cache: true}) %>
+  </section>
+
+  <section class="card" style="flex-grow: 1;">
+    <h1 class="article-title uk-article-title" style="text-align: center;">
+      <%- trim(page.title.replace(/[<>&"]/g, function(c){
+        return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];
+      })) %>
+    </h1>
+    <div style="margin-left: 15px;">
+      <%- page.more %>
+    </div>
+  </section>
 </section>
