@@ -7,7 +7,7 @@ const documentHead = document.getElementsByTagName('head')[0]
 
 const localTheme = localStorage.getItem('theme')
 const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-const darkThemeHref = 'https://cdn.bootcss.com/highlight.js/9.15.10/styles/atom-one-dark.min.css'
+const darkThemeHref = 'https://cdnjs.cloudflare.com/ajax/libs.com/highlight.js/9.15.10/styles/atom-one-dark.min.css'
 
 function insertThemeDarkLink() {
   const link = document.createElement('link')
