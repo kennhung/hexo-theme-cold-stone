@@ -2,12 +2,35 @@
 layout: layout
 ---
 
-<section class="slide-in-right" style="display:flex;flex-direction:row;justify-content:center;">
-  <section class="card about" style="margin-right: 15px;">
+<section class="slide-in-right" style="display:flex;flex-direction:row;justify-content:center;flex-wrap: wrap;">
+  <style>
+    
+    #about-left {
+      margin-right: 15px;
+    }
+
+    #about-right {
+      flex-grow: 1;
+    }
+
+    @media only screen and (max-width: 760px) {
+      #about-left {
+        margin: .5rem;
+        flex-grow: 1;
+        min-height: initial;
+      }
+
+      #about-right {
+        flex-grow: 1;
+        margin: .5rem;
+      }
+    }
+  </style>
+  <section class="card about" id="about-left">
     <%- partial('_partial/bio', null, {cache: true}) %>
   </section>
 
-  <section class="card" style="flex-grow: 1;">
+  <section class="card" id="about-right">
     <h1 class="article-title uk-article-title" style="text-align: center;">
       <%- trim(page.title.replace(/[<>&"]/g, function(c){
         return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];
